@@ -1,6 +1,7 @@
 // React components are like custom HTML elements
 // Declarative Approach: Define the desired target state(s) and let React figure out the actual Javascript DOM instructions
-import Expenses from './components/Expenses';
+import React from 'react';
+import Expenses from './components/Expenses/Expenses';
 
 function App() {
   const expenses = [
@@ -36,6 +37,15 @@ function App() {
       <Expenses items={expenses} />
     </div>
   );
+
+  // Previous method of doing the above code without JSX
+  // Reason why React needed to be imported
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
 }
 
 export default App;
